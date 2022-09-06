@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class MovementButton : MonoBehaviour
 {
+    public static MovementButton Instance;
     public XRButton xrButton;
     public ControlRobotButton controlRobotButton;
     public float x, y, z;
     bool isCollision = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        if (Instance == null)
+        {
+            Instance = GetComponent<MovementButton>();
+        }
     }
+
 
     // Update is called once per frame
     void Update()
@@ -23,12 +27,4 @@ public class MovementButton : MonoBehaviour
             controlRobotButton.ControlRobotMovement(x, y, z);
         }
     }
-
-    // public void onclickButton()
-    // {
-    //     {
-    //             controlRobotButton.ControlRobotMovement(x, y, z);
-    //     }
-
-    // }
 }
