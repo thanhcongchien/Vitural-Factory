@@ -20,7 +20,7 @@ public class KeyboradButton : MonoBehaviour
 
         if(buttonTextMesh.text.Length == 1){
             NameToButtonText();
-            GetComponentInChildren<XRButton>().OnRelease.AddListener(delegate{keyboard.InsertChar(buttonTextMesh.text);});
+            // GetComponentInChildren<XRButton>().OnRelease.AddListener(delegate{keyboard.InsertChar(buttonTextMesh.text);});
         }
     }
 
