@@ -46,27 +46,27 @@ public class RobotMovementSocketIO : MonoBehaviour
             movingSystemBase.transform.position += new Vector3(0, 0, stepMove);
             Debug.Log("FORWARD");
         }
-        else if (direction.Contains("BACKWARD"))
+        if (direction.Contains("BACKWARD"))
         {
             movingSystemBase.transform.position += new Vector3(0, 0, -stepMove);
         }
-        else if (direction.Contains("LEFT"))
+        if (direction.Contains("LEFT"))
         {
             movingSystemBase.transform.position += new Vector3(-stepMove, 0, 0);
         }
-        else if (direction.Contains("RIGHT"))
+        if (direction.Contains("RIGHT"))
         {
             movingSystemBase.transform.position += new Vector3(stepMove, 0, 0);
         }
-        else if (direction.Contains("UP"))
+        if (direction.Contains("UP"))
         {
             movingSystemBase.transform.position += new Vector3(0, stepMove, 0);
         }
-        else if (direction.Contains("DOWN"))
+        if (direction.Contains("DOWN"))
         {
             movingSystemBase.transform.position += new Vector3(0, -stepMove, 0);
         }
-        else
+
         {
             Debug.Log("Invalid direction");
         }

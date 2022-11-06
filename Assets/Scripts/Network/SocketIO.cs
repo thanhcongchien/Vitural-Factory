@@ -6,6 +6,7 @@ using SocketIOClient.Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
+using System.Text;
 
 // using Debug = System.Diagnostics.Debug;
 
@@ -50,11 +51,11 @@ public class SocketIO : Singleton<SocketIO>
         {
             Debug.Log("disconnect: " + e);
         };
-        socket.OnReconnectAttempt += (sender, e) =>
-        {
-            Debug.Log($"{DateTime.Now} Reconnecting: attempt = {e}");
-        };
-        
+        // socket.OnReconnectAttempt += (sender, e) =>
+        // {
+        //     Debug.Log($"{DateTime.Now} Reconnecting: attempt = {e}");
+        // };
+
 
         Debug.Log("Connecting...");
         socket.Connect();
@@ -72,12 +73,30 @@ public class SocketIO : Singleton<SocketIO>
             RobotMovement resultJson = RobotMovement.FromJSON(data);
             RobotMovementSocketIO.instance.ControlRobotMovement(resultJson.direction, resultJson.step);
         });
-          
-
-    }   
+    }
 
 
+    void Update()
+    {
+        CommandLiveCamera();
+    }
+
+    void CommandLiveCamera()
+    {
+
+        // if (LiveCamera.instance.imageData != null)
+        // {
+        //     string encodedText = LiveCamera.instance.imageData;
+
+        // string data = LiveCamera.instance.imageData;
+        // if (LiveCamera.instance.bytesToSend != null)
+        // {
+        socket.Emit(SocketEventDef.LIVE_CAMERA, LiveCamera.instance.imageData);
+        // LiveCamera.instance.imageDataReady = false;
+        // }
+        // }
 
 
+    }
 
 }

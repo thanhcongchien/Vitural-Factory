@@ -5,6 +5,7 @@ using UnityEngine;
 public static class SocketEventDef
 {
     public static string MOVE = "MOVE";
+     public static string LIVE_CAMERA = "LIVE_CAMERA";
 
 }
 
@@ -48,5 +49,6 @@ public class RobotMovement
         return JsonUtility.FromJson<RobotMovement>(data);
     }
 }
+
 
 

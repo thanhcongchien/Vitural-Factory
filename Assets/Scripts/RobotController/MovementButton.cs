@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementButton : MonoBehaviour
 {
     public static MovementButton Instance;
-    public XRButton xrButton;
+    // public XRButton xrButton;
     public ControlRobotButton controlRobotButton;
     public float x, y, z;
     bool isCollision = false;
@@ -22,9 +22,9 @@ public class MovementButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (xrButton.currentPress)
-        {
-            controlRobotButton.ControlRobotMovement(x, y, z);
-        }
+        // if (xrButton.currentPress)
+        // {
+        //     controlRobotButton.ControlRobotMovement(x, y, z);
+        // }
     }
 }
