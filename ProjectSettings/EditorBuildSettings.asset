@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/IMWI.unity
+    path: Assets/Scenes/VirXF.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
     path: Assets/Scenes/GeneralScene.unity
     guid: f5fdf92c9d286ce419f9d84c97b8719e
   - enabled: 1
-    path: Assets/Scenes/OverlayBrowserDemo.unity
+    path: Assets/Scenes/Browser.unity
     guid: 849d0993dc0514622bc23678b462bd78
   - enabled: 0
     path: Assets/Scenes/UnderlayBrowserDemo.unity
